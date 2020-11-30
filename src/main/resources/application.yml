@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active: dev
+  jpa:
+    hibernate:
+      ddl-auto: none
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: true
+
+youth:
+  api-package: com.cao.youth.api
+  year-codes: A,B,C,D,E,F,G,H,I,J,K,L,M,N
+
+
+wx:
+  appid: wx72074e95366c5e42
+  appsecret: 2310d21ae85156ee65da959e0ebdcc16
+  code2session: https://api.weixin.qq.com/sns/jscode2session?appid={0}&secret={1}&js_code={2}&grant_type=authorization_code
+  pay:
+    mchId: 1473426802  #商户号id
+    key: T6m9iK73b0kn9g5v426MKfHQH7X8rKwb  # 秘钥
+    notifyurl: http://a31ef7db.ngrok.io/WeChatPay/WeChatPayNotify  #回调地址
