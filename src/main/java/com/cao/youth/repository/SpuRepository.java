@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @date 2020/8/21 23:16
  */
 public interface SpuRepository extends JpaRepository<Spu,Long> {
-    Spu findOneById(Long id);
+    Spu findOneById(Long id); 
     /** "select * from spu where category_id="cid"  */
     Page<Spu> findByCategoryIdOrderByCreateTimeDesc(Long cid, Pageable pageable);
     Page<Spu> findByRootCategoryIdOrderByCreateTime(Long cid, Pageable pageable);
