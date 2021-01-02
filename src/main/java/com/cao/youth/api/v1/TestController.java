@@ -19,6 +19,6 @@ public class TestController {
 
     @GetMapping("/push")
     public void pushMessageToMq() throws Exception {
-        producerSchedule.send("TopicTest","test");
+//        producerSchedule.send("TopicTest","test");
     }
 }

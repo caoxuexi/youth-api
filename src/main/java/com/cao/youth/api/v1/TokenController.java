@@ -44,7 +44,6 @@ public class TokenController {
                 throw new NotFoundException(10003);
         }
         map.put("token", token);
-
         return map;
     }
 
