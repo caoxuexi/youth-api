@@ -23,6 +23,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
     Page<Order> findByUserIdAndStatus(Long uid,Integer status,Pageable pageable);
     Optional<Order> findFirstByUserIdAndId(Long uid, Long oid);
     Optional<Order> findFirstByOrderNo(String orderNo);
+    @Query("select o.orderNo from Order o where o.id=:oid")
     Optional<String> findOrderNoById(Long oid);
 
     @Modifying

@@ -42,6 +42,7 @@ public class Spu extends BaseEntity {
 
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name="spuId")
+    @OrderBy("index asc ")
     private List<SpuDetailImg> spuDetailImgList;
 
 }

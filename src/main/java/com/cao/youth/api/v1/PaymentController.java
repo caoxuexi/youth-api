@@ -39,7 +39,7 @@ public class PaymentController {
 //    }
 
     //start 在没有微信支付的时候使用
-    @PostMapping("/pay/order/id}")
+    @PostMapping("/pay/order/{id}")
     @ScopeLevel
     public String preWxOrder(@PathVariable(name = "id") @Positive Long oid){
         try{

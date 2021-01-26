@@ -25,6 +25,7 @@ public class ActivityPureVO {
     private String remark;
     private String startTime;
     private String endTime;
+    private String name;
 
     public ActivityPureVO(Activity activity) {
         BeanUtils.copyProperties(activity,this);

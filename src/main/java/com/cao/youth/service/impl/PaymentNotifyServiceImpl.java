@@ -42,6 +42,7 @@ public class PaymentNotifyServiceImpl implements PaymentNotifyService {
         });
     }
 
+    //有微信支付时调用
     @Transactional
     @Override
     public void processPayNotify(String data) {
