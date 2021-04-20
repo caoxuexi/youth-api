@@ -5,6 +5,7 @@ import com.cao.youth.core.LocalUser;
 import com.cao.youth.core.interceptors.ScopeLevel;
 import com.cao.youth.dto.OrderDTO;
 import com.cao.youth.exception.http.NotFoundException;
+import com.cao.youth.lib.CaoWxNotify;
 import com.cao.youth.logic.CouponChecker;
 import com.cao.youth.logic.OrderChecker;
 import com.cao.youth.model.Order;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.Positive;
 import java.util.Optional;
 
 /**
@@ -80,5 +82,17 @@ public class OrderController {
         PagingDozer pagingDozer=new PagingDozer<>(orderPage, OrderSimplifyVO.class);
         pagingDozer.getItems().forEach((o)->((OrderSimplifyVO)o).setPeriod(this.payTimeLimit));
         return pagingDozer;
+    }
+
+    //确认收货
+    @ScopeLevel()
+    @PostMapping("/confirm/{id}")
+    public String confirmReceipt(@PathVariable(name = "id") @Positive Long oid){
+        try{
+            this.orderService.confirmReceipt(oid);
+        }catch (Exception e){
+            return CaoWxNotify.fail();
+        }
+        return CaoWxNotify.success();
     }
 }

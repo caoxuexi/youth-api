@@ -20,4 +20,5 @@ public interface OrderService {
 
     Optional<Order> getOrderDetail(Long oid);
     void updateOrderPrepayId(Long orderId,String prePayId);
+    void confirmReceipt(Long oid);
 }
