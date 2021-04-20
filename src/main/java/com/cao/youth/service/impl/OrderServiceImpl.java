@@ -203,6 +203,6 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void confirmReceipt(Long oid) {
         Optional<Order> orderOptional = this.orderRepository.findById(oid);
-        Order order = orderOptional.orElseThrow(() -> new NotFoundException(9999));
+        Order order = orderOptional.orElseThrow(() -> new NotFoundException(50009));
     }
 }
