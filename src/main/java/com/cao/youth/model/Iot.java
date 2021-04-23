@@ -1,7 +1,9 @@
 package com.cao.youth.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,8 +16,9 @@ import java.util.Date;
  * @date 2021/4/3 14:12
  */
 @Entity
-@Data
-public class IotData {
+@Getter
+@Setter
+public class Iot {
     @Id
     private Long id;
     private double temperature;
