@@ -9,8 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2020/8/11 11:39
  */
 @SpringBootApplication
-public class SleeveApplication {
+public class YouthApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SleeveApplication.class, args);
+        SpringApplication.run(YouthApplication.class, args);
     }
 }

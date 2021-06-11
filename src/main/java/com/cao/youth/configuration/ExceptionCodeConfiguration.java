@@ -16,6 +16,7 @@ import java.util.Map;
 @PropertySource(value = "classpath:config/exception-code.properties")
 @Component
 public class ExceptionCodeConfiguration {
+
     private Map<Integer,String> codes=new HashMap<>();
 
     public String getMessage(int code){
